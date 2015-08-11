@@ -32,15 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${cardInstance?.cardType}">
-				<li class="fieldcontain">
-					<span id="cardType-label" class="property-label"><g:message code="card.cardType.label" default="Card Type" /></span>
-					
-						<span class="property-value" aria-labelledby="cardType-label"><g:fieldValue bean="${cardInstance}" field="cardType"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${cardInstance?.user}">
 				<li class="fieldcontain">
 					<span id="user-label" class="property-label"><g:message code="card.user.label" default="User" /></span>

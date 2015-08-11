@@ -1,5 +1,7 @@
 package goconf
 
+import org.apache.commons.lang.StringUtils
+
 class User {
 
     def long id
@@ -18,6 +20,13 @@ class User {
     def String ok
     def String linkedIn
     static belongsTo = [card: Card]
+
+    String toString() {
+        return id + ":" +
+                (StringUtils.isNotBlank(firstName) ? firstName : "") +
+                ((StringUtils.isNotBlank(firstName) && StringUtils.isNotBlank(lastName)) ? "_" : "") +
+                (StringUtils.isNotBlank(lastName) ? lastName : "")
+    }
 
     static constraints = {
         firstName blank: false, nullable: true, size: 1..63

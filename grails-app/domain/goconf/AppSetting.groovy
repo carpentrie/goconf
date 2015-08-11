@@ -1,12 +1,15 @@
 package goconf
 
+import org.apache.commons.lang.StringUtils
+
 class AppSetting {
 
+    def long id
     def String key
     def String value
 
-    static mapping = {
-        id generator: 'assigned', name: 'key'
+    String toString() {
+        return key
     }
 
     static constraints = {

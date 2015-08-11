@@ -23,37 +23,23 @@
 			<table>
 			<thead>
 					<tr>
-					
-						<g:sortableColumn property="firstName" title="${message(code: 'user.firstName.label', default: 'First Name')}" />
-					
-						<g:sortableColumn property="lastName" title="${message(code: 'user.lastName.label', default: 'Last Name')}" />
-					
+						<g:sortableColumn property="name" title="${message(code: 'user.name.label', default: 'Name')}" />
 						<g:sortableColumn property="nickName" title="${message(code: 'user.nickName.label', default: 'Nick Name')}" />
-					
-						<g:sortableColumn property="birthDate" title="${message(code: 'user.birthDate.label', default: 'Birth Date')}" />
-					
 						<g:sortableColumn property="organization" title="${message(code: 'user.organization.label', default: 'Organization')}" />
-					
-						<g:sortableColumn property="position" title="${message(code: 'user.position.label', default: 'Position')}" />
-					
+						<g:sortableColumn property="email" title="${message(code: 'user.email.label', default: 'Email')}" />
+						<g:sortableColumn property="card" title="${message(code: 'user.card.label', default: 'Card')}" />
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${userInstanceList}" status="i" var="userInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "firstName")}</g:link></td>
-					
-						<td>${fieldValue(bean: userInstance, field: "lastName")}</td>
-					
+						<td><g:link action="show" id="${userInstance.id}">${userInstance.toString()}</g:link></td>
 						<td>${fieldValue(bean: userInstance, field: "nickName")}</td>
-					
-						<td><g:formatDate date="${userInstance.birthDate}" /></td>
-					
 						<td>${fieldValue(bean: userInstance, field: "organization")}</td>
-					
-						<td>${fieldValue(bean: userInstance, field: "position")}</td>
-					
+						<td>${fieldValue(bean: userInstance, field: "email")}</td>
+						<td><g:if test="${userInstance.card}"><g:link controller="card" action="show" id="${userInstance.card.id}">${userInstance.card.toString()}</g:link></g:if></td>
+
 					</tr>
 				</g:each>
 				</tbody>

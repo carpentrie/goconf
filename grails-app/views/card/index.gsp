@@ -26,8 +26,6 @@
 					
 						<g:sortableColumn property="code" title="${message(code: 'card.code.label', default: 'Code')}" />
 					
-						<g:sortableColumn property="cardType" title="${message(code: 'card.cardType.label', default: 'Card Type')}" />
-					
 						<th><g:message code="card.user.label" default="User" /></th>
 					
 					</tr>
@@ -37,8 +35,6 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${cardInstance.id}">${fieldValue(bean: cardInstance, field: "code")}</g:link></td>
-					
-						<td>${fieldValue(bean: cardInstance, field: "cardType")}</td>
 					
 						<td>${fieldValue(bean: cardInstance, field: "user")}</td>
 					

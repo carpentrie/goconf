@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list infoDesk">
 			
+				<g:if test="${infoDeskInstance?.title}">
+				<li class="fieldcontain">
+					<span id="title-label" class="property-label"><g:message code="infoDesk.title.label" default="Title" /></span>
+					
+						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${infoDeskInstance}" field="title"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${infoDeskInstance?.info}">
 				<li class="fieldcontain">
 					<span id="info-label" class="property-label"><g:message code="infoDesk.info.label" default="Info" /></span>

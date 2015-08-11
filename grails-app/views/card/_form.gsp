@@ -2,21 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: cardInstance, field: 'code', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: cardInstance, field: 'code', 'error')} required">
 	<label for="code">
 		<g:message code="card.code.label" default="Code" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="code" maxlength="63" value="${cardInstance?.code}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: cardInstance, field: 'cardType', 'error')} ">
-	<label for="cardType">
-		<g:message code="card.cardType.label" default="Card Type" />
-		
-	</label>
-	<g:textField name="cardType" maxlength="63" value="${cardInstance?.cardType}"/>
+	<g:textField name="code" maxlength="63" required="" value="${cardInstance?.code}"/>
 
 </div>
 
