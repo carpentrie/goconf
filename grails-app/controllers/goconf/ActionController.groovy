@@ -1,4 +1,4 @@
-﻿package goconf
+package goconf
 
 import grails.converters.JSON
 
@@ -59,8 +59,8 @@ class ActionController {
             from appConfigService.getSetting('email_from')
             to "${card.user.email}"
             bcc appConfigService.getSetting('email_bcc')
-            subject "${infoDesk.title}"
-            html "${infoDesk.title}<br/><hr><br/><br/>${infoDesk.info}<br/><hr>"
+            subject "Привет, я доска, вот вам немножко инфы с меня!"
+            html "Привет, я доска, вот вам немножко инфы с меня!.<br/>-------${infoDesk.info}<br/>-------"
         }
 
         render "ok"
